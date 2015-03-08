@@ -1,4 +1,5 @@
 import math
+import time
 def is_prime(number):
 	if number < 2:
 		return False
@@ -9,16 +10,19 @@ def is_prime(number):
 			return False
 	return True
 
+ctime = time.time()
 i = 1
+result = 0
 primes = [2]
 while i < 2000000:
 	if is_prime(i):
-		primes.append(i)
+		result += i
 	i += 2
+'''
 
-result = 0
 for prime in primes:
 	prime = int(prime)
 	result += prime
-
-print(result)
+'''
+print(result + 2)
+print("Time: " + str(time.time() - ctime))
